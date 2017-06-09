@@ -2,6 +2,13 @@ language: cpp
 compiler: gcc
 dist: trusty
 
+install:
+  # Put ChaiScript in folder next to this one
+  - my_github=${PWD##*/}  
+  - cd ..
+  - git clone https://github.com/ChaiScript/ChaiScript.git
+  - cd $my_github
+
 script: 
   - qmake
   - make
